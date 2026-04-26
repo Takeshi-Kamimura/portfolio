@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 723.98 223.39">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .03em;
+      }
+
+      .cls-2 {
+        letter-spacing: .04em;
+      }
+
+      .cls-3 {
+        letter-spacing: .04em;
+      }
+
+      .cls-4 {
+        letter-spacing: .04em;
+      }
+
+      .cls-5 {
+        fill: #fff;
+        font-family: BebasNeuePro-Bold, 'Bebas Neue Pro';
+        font-size: 92px;
+        font-weight: 700;
+      }
+
+      .cls-6 {
+        fill: url(#_名称未設定グラデーション_76);
+      }
+
+      .cls-7 {
+        letter-spacing: .04em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.03em;
+      }
+    </style>
+    <linearGradient id="_名称未設定グラデーション_76" data-name="名称未設定グラデーション 76" x1="0" y1="111.69" x2="223.39" y2="111.69" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#aed038"/>
+      <stop offset="1" stop-color="#bdd63a"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-6" width="223.39" height="223.39" rx="15.43" ry="15.43"/>
+  <text class="cls-5" transform="translate(340.35 141.59)"><tspan class="cls-2" x="0" y="0">PUL</tspan><tspan class="cls-8" x="115.09" y="0">L</tspan><tspan class="cls-3" x="144.16" y="0">-</tspan><tspan class="cls-7" x="173.14" y="0">UP </tspan><tspan class="cls-4" x="271.3" y="0">L</tspan><tspan class="cls-1" x="306.54" y="0">AB</tspan></text>
+  <path d="M165.52,34.91c-7.38,19.85-30.82,48.44-53.82,48.46-23.43.02-46.3-28.18-53.82-48.46h107.64ZM109.43,44.28c-17.16,1.87-16.67,26.78-1,28.93,24.2,3.32,23.14-31.35,1-28.93Z"/>
+  <path d="M160.64,84.15c9.57-11.36,17.1-23.97,24.55-36.76.29-.5.83-.81,1.4-.81h15.48c.86,0,1.57-.67,1.62-1.53l.5-8.28c.03-.42-.12-.84-.39-1.16l-.13-.15c-.31-.36-.76-.56-1.23-.56h-20.88c-.56,0-1.09.29-1.38.76-8.73,13.91-16.11,28.58-27.04,40.97-6.49,7.36-26.3,22.08-26.3,31.28v90.54h12.52v-89.7c0-3.72,17.65-20.28,21.29-24.6Z"/>
+  <path d="M62.75,84.15c-9.57-11.36-17.1-23.97-24.55-36.76-.29-.5-.83-.81-1.4-.81h-15.48c-.86,0-1.57-.67-1.62-1.53l-.5-8.28c-.03-.42.12-.84.39-1.16l.13-.15c.31-.36.76-.56,1.23-.56h20.88c.56,0,1.09.29,1.38.76,8.73,13.91,16.11,28.58,27.04,40.97,6.49,7.36,26.3,22.08,26.3,31.28v90.54h-12.52v-89.7c0-3.72-17.65-20.28-21.29-24.6Z"/>
+</svg>

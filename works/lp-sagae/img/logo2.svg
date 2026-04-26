@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 212.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e86029;
+      }
+
+      .cls-2 {
+        fill: #9f0000;
+      }
+
+      .cls-3 {
+        font-size: 35px;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: UDDigiKyokashoNK-Bold, 'UD Digi Kyokasho NK';
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #9f0000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        font-size: 45.54px;
+      }
+    </style>
+  </defs>
+  <text class="cls-4" transform="translate(6.77 138.72)"><tspan x="0" y="0">お仕事紹</tspan><tspan class="cls-1" x="179.91" y="0">介</tspan></text>
+  <text class="cls-3" transform="translate(42.56 191.74)"><tspan x="0" y="0">マッチング</tspan></text>
+  <g>
+    <g>
+      <path class="cls-5" d="M50.35,52.73c6.93-14.72,19.91-26.14,35.53-30.8,16.41-4.89,34.68-2.27,48.9,7.32,7.96,5.37,14.56,12.73,19.01,21.24"/>
+      <line class="cls-5" x1="63.55" y1="35.39" x2="63.55" y2="52.63"/>
+      <line class="cls-5" x1="76.08" y1="26.23" x2="76.33" y2="51.84"/>
+      <line class="cls-5" x1="90.43" y1="20.54" x2="90.69" y2="46.14"/>
+      <path class="cls-5" d="M190.6,50.74c-15.15-30.26-55.86-42.06-83.98-22.03-8.06,5.74-14.37,13.74-18.93,22.46"/>
+      <line class="cls-5" x1="165.68" y1="25.98" x2="165.67" y2="52.13"/>
+      <line class="cls-5" x1="151.32" y1="20.04" x2="151.32" y2="46.19"/>
+      <line class="cls-5" x1="178.3" y1="34.15" x2="178.4" y2="51.44"/>
+    </g>
+    <line class="cls-5" x1="43.64" y1="51.95" x2="196.36" y2="50.48"/>
+    <line class="cls-5" x1="43.64" y1="59.52" x2="196.36" y2="58.04"/>
+    <rect class="cls-2" x="65.66" y="60.07" width="8.82" height="16.03"/>
+    <rect class="cls-2" x="167.77" y="59.12" width="8.82" height="16.03"/>
+  </g>
+</svg>

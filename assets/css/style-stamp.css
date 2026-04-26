@@ -1,0 +1,178 @@
+/* Inner page navbar: hero がないので常に暗い背景 */
+.navbar-inner {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* thumbnail */
+.thumbnail-container img {
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  display: block;
+  margin: 0 auto; /* 中央揃え */
+}
+
+/* Summary box ------------------------------------------ */
+.summary-box {
+  background: var(--surface-color);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.summary-item h3 {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+  margin-bottom: 0.45rem;
+}
+
+.summary-item p {
+  color: var(--card-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* card-left: .card は既にleft揃えだが、
+         full-width を明示したいときに使う */
+.card.card-left {
+  width: 100%;
+}
+
+#result .card.card-left h3 {
+  padding-top: 24px;
+}
+/* Card 内 ul（#thinking / #about スコープ外でも有効に） */
+.card ul {
+  margin-top: 0.25rem;
+  padding-left: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.card ul li {
+  color: var(--card-muted);
+  line-height: 1.85;
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.35rem;
+}
+
+.card ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--secondary-color);
+}
+
+/* Page anchor nav -------------------------------------- */
+.page-nav {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  padding: 1.1rem 1.4rem;
+  background: var(--surface-color);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.page-nav a {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  color: var(--card-muted);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-line);
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.page-nav a:hover {
+  color: var(--secondary-color);
+  border-color: rgba(245, 158, 11, 0.55);
+}
+
+/* Before / After compare grid -------------------------- */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.compare-label {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--card-muted);
+  margin-bottom: 0.35rem;
+  opacity: 1;
+}
+
+.compare-label p {
+  flex: 1;
+}
+
+.compare .thumbnail-container {
+  border: 1px solid var(--card-line);
+  border-radius: 6px;
+}
+
+#solution .grid-2 .card:nth-child(3) .thumbnail-container {
+  aspect-ratio: unset;
+  height: auto;
+}
+
+#solution .grid-2 .card:nth-child(3) .thumbnail-container img {
+  object-fit: contain;
+  height: auto;
+}
+
+/* Back link -------------------------------------------- */
+.back-link {
+  margin-top: 2.5rem;
+}
+
+/* Demo card の margin 調整 */
+.card.demo-card {
+  margin-top: 1.5rem;
+}
+
+/* Responsive ------------------------------------------- */
+@media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .compare {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}

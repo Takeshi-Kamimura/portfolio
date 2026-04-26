@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="寒河江が伴走する転職相談。IT・WEB業界の転職サポートを無料で提供。応募書類添削から面接対策まで徹底サポート。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="img/suketaro.svg" />
+    <link rel="apple-touch-icon" href="img/suketaro.svg" />
+    <title>お仕事紹介マッチング | 寒河江が伴走する転職相談</title>
+    <style>
+      /* --- 共通・基本設定 --- */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans JP", sans-serif;
+        letter-spacing: 0.05em;
+        color: #26272a;
+        background-color: #f1efdf;
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 640px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        overflow-x: hidden;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* --- ローディング画面 --- */
+      #loading-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #f1efdf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition:
+          opacity 0.8s ease,
+          visibility 0.8s;
+      }
+
+      #loading-wrapper.loaded {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .loading-logo {
+        width: 150px;
+        margin: 0 auto 20px;
+        animation: floating 2s infinite ease-in-out;
+      }
+
+      .loading-text {
+        font-size: 20px;
+        font-weight: bold;
+        color: #e86029;
+        letter-spacing: 0.1em;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .loading-bar-container {
+        width: 200px;
+        height: 2px;
+        background: #fcfbef;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 10px;
+      }
+
+      .loading-bar {
+        width: 100%;
+        height: 100%;
+        background: #e86029;
+        transform: translateX(-100%);
+        animation: loading-line 1.5s infinite ease-in-out;
+      }
+
+      /* --- ヘッダー --- */
+      .header-wrapper {
+        background-color: #f1efdf;
+        padding: 50px 0;
+      }
+      .header {
+        background-color: #fff;
+        border-radius: 60px;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(8px, 3vw, 15px);
+        width: 90%;
+        max-width: 520px;
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+
+      .header .logo {
+        width: 45%;
+        max-width: 180px;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.05));
+      }
+      .header .staff-photo {
+        width: 35%;
+        max-width: 130px;
+        transform: translateY(15px);
+        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+      }
+
+      /* --- ボタン共通 --- */
+      .btn-red {
+        display: block;
+        width: 90%;
+        max-width: 450px;
+        margin-top: 30px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 60px;
+        background-color: #9f0000;
+        color: #fff;
+        text-align: center;
+        padding: clamp(16px, 4vw, 20px) 0;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: clamp(18px, 5vw, 24px);
+        box-shadow: 0 6px 20px rgba(163, 25, 0, 0.4);
+        animation: pulse 3s infinite ease-in-out;
+        transition: transform 0.2s;
+      }
+
+      @media (hover: hover) {
+        .btn-red:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      /* --- セクションタイトル系 --- */
+      .intro {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+      .intro .label {
+        color: #e86029;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+        display: block;
+      }
+      .intro h3 {
+        font-size: 22px;
+        margin: 0 0 10px;
+        line-height: 1.2;
+        font-weight: bold;
+      }
+
+      /* 共通見出し設定 */
+      .solution-title,
+      .flow-title {
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .solution-title {
+        background-color: #e86029;
+        color: #fff;
+        padding: 20px 10px;
+        font-size: clamp(18px, 5.5vw, 26px);
+        white-space: nowrap;
+        width: 100%;
+      }
+
+      .flow-title {
+        color: #519ba2;
+        font-size: clamp(20px, 8vw, 36px);
+        margin-bottom: clamp(40px, 10vw, 70px);
+        font-weight: bold;
+      }
+
+      /* --- 悩みセクション --- */
+      .trouble {
+        background-color: #f1efdf;
+        padding: 60px 20px 100px;
+        text-align: center;
+      }
+      .trouble h3 {
+        color: #e86029;
+        font-size: clamp(18px, 5vw, 28px);
+        display: inline-block;
+        padding: 0 10px 30px;
+        margin-bottom: 50px;
+        position: relative;
+        white-space: nowrap;
+      }
+      .trouble h3 span {
+        font-size: 1.3em;
+        margin: 0 2px;
+      }
+
+      .trouble h3::before {
+        content: "";
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          #e86029 0%,
+          #e86029 45%,
+          transparent 45%,
+          transparent 55%,
+          #e86029 55%,
+          #e86029 100%
+        );
+      }
+
+      .trouble h3::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 46%;
+        width: 2px;
+        height: 27px;
+        background-color: #e86029;
+        transform: rotate(-25deg);
+      }
+      /* デフォルト（PCサイズ）の設定 */
+      .pc-only {
+        display: block !important;
+      }
+      .sp-only {
+        display: none !important;
+      }
+      .trouble-items {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1.5vw;
+        padding: 0 3vw;
+      }
+
+      .trouble-img {
+        width: 30.5%;
+        height: auto;
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+        animation: float 4s ease-in-out infinite;
+      }
+      .trouble-img:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+
+      /* --- 特徴セクション --- */
+      .feature-item {
+        display: flex;
+        align-items: center;
+        padding: 60px 40px;
+      }
+      .feature-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .feature-img {
+        width: clamp(150px, 30vw, 200px);
+        aspect-ratio: 1/1;
+        border-radius: 20px;
+        object-fit: contain;
+        background-color: #fcfbef;
+        flex-shrink: 0;
+      }
+
+      .feature-text {
+        flex: 1;
+        padding: 0 clamp(15px, 5vw, 40px);
+      }
+      .feature-text h4 {
+        font-size: clamp(19px, 4vw, 24px);
+        color: #e86029;
+        margin: 0 0 15px 0;
+      }
+      .feature-text p {
+        margin: 0;
+        font-size: clamp(14px, 3vw, 16px);
+      }
+
+      /* --- フロー(STEP) --- */
+      .flow {
+        background-color: #f1efdf;
+        padding: 60px;
+      }
+      .step-card {
+        background: #fff;
+        border-radius: 20px;
+        margin: 0 auto 50px;
+        padding: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        max-width: 800px;
+      }
+
+      .step-num {
+        position: absolute;
+        top: -35px;
+        left: -15px;
+        background: #519ba2;
+        color: #fff;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+      }
+      .step-num::before {
+        content: "STEP";
+        font-size: 12px;
+        margin-bottom: 2px;
+      }
+      .step-num::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        right: 5px;
+        border-style: solid;
+        border-width: 20px 20px 0 0;
+        border-color: #519ba2 transparent transparent transparent;
+        transform: rotate(55deg);
+      }
+
+      .step-left {
+        flex: 0 0 200px;
+        text-align: center;
+      }
+      .step-left h5 {
+        font-size: 20px;
+        margin: 0 0 10px;
+      }
+      .step-icon-box {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto;
+        background: #fcfbef;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .step-icon-box img {
+        width: 75px;
+        height: 75px;
+      }
+
+      .naitei {
+        text-align: center;
+        color: #519ba2;
+        font-weight: bold;
+        font-size: clamp(26px, 6vw, 28px);
+        width: 100%;
+      }
+      .naitei-notice {
+        font-size: 13px;
+        font-weight: normal;
+        color: #26272a;
+        margin-bottom: 10px;
+      }
+
+      /* --- 動画セクション --- */
+      .movie-section {
+        background: #f1efdf;
+        padding-bottom: 40px;
+      }
+      .movie-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .movie-label {
+        display: inline-block;
+        color: #e86029;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        border-bottom: 2px solid #e86029;
+        padding: 0 10px 5px;
+      }
+
+      .movie-grid {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        padding: 0 60px;
+      }
+      .movie-item {
+        width: calc(50% - 20px);
+        max-width: 280px;
+        text-align: center;
+      }
+      .movie-top {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .movie-thumb {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 235/325;
+        border-radius: 20px;
+        overflow: visible;
+        margin: 0 auto;
+      }
+      .target-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .click-overlap {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: clamp(50px, 15vw, 66px);
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .movie-item h4 {
+        margin-top: 16px;
+        font-size: 16px;
+      }
+      .movie-text {
+        font-size: 13px;
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+
+      /* --- フッター --- */
+      .footer-simple-center {
+        background-color: #f1efdf;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 10px;
+      }
+      .footer-logo-box img {
+        width: 250px;
+        margin-bottom: 0px;
+      }
+      .copyright {
+        margin-top: 0px;
+      }
+
+      /* --- アニメーション --- */
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      @keyframes loading-line {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      @media (max-width: 800px) {
+        .flow {
+          padding: 20px;
+        }
+        .movie-grid {
+          padding: 20px;
+        }
+        .movie-header {
+          margin-bottom: 0px;
+        }
+        .step-left {
+          flex: auto;
+        }
+        .intro {
+          padding: 30px;
+        }
+        .trouble {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+      }
+      @media (max-width: 650px) {
+        .flow-title {
+          font-size: 24px;
+        }
+      }
+      /* --- レスポンシブ調整 --- */
+      @media screen and (min-width: 651px) {
+        .pc-bg-slideshow {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          z-index: 1;
+        }
+        .bg-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          opacity: 0;
+          animation: photoZoomSlider 18s infinite;
+        }
+        .bg-img:nth-child(1) {
+          background-image: url("img/still01.jpg");
+          animation-delay: 0s;
+        }
+        .bg-img:nth-child(2) {
+          background-image: url("img/still02.jpg");
+          animation-delay: 6s;
+        }
+        .bg-img:nth-child(3) {
+          background-image: url("img/still03.jpg");
+          animation-delay: 12s;
+        }
+        @keyframes photoZoomSlider {
+          0% {
+            opacity: 0;
+            transform: scale(1);
+          }
+          10%,
+          33% {
+            opacity: 1;
+          }
+          43% {
+            opacity: 0;
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .pc-only {
+          display: none !important;
+        }
+        .sp-only {
+          display: block !important;
+        }
+        .feature-item {
+          flex-direction: column !important;
+          text-align: center;
+          padding: 30px 20px;
+        }
+        .feature-img {
+          margin-bottom: 20px;
+        }
+        .step-card {
+          flex-direction: column;
+          gap: 15px;
+          padding: 50px 20px 30px;
+          margin: 0 15px 50px;
+        }
+        .step-left {
+          width: 100%;
+        }
+        .step-num {
+          width: 65px;
+          height: 65px;
+          font-size: 24px;
+          top: -25px;
+        }
+        .movie-grid {
+          gap: 15px;
+        }
+        .movie-item {
+          width: calc(50% - 10px);
+        }
+      }
+      /* モーダル */
+      .video-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .video-modal-content {
+        height: 90%;
+        position: relative;
+      }
+      #modal-video {
+        height: 100%;
+        object-fit: contain;
+        width: 97%;
+        border-radius: 10px;
+      }
+      .video-close {
+        position: absolute;
+        top: -45px;
+        right: 0;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pc-bg-slideshow">
+      <div class="bg-img"></div>
+      <div class="bg-img"></div>
+      <div class="bg-img"></div>
+    </div>
+
+    <div id="loading-wrapper">
+      <div class="loading-content">
+        <div class="loading-logo">
+          <img src="img/logo3.png" alt="お仕事紹介マッチング" />
+        </div>
+        <div class="loading-text">お仕事紹介マッチング</div>
+        <div class="loading-bar-container"><div class="loading-bar"></div></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="header-wrapper">
+        <header class="header">
+          <img src="img/logo3.svg" alt="お仕事紹介マッチング" class="logo" />
+          <img src="img/sagae-mv.png" alt="担当者 寒河江" class="staff-photo" />
+        </header>
+      </div>
+
+      <section class="intro">
+        <span class="label">寒河江の思い</span>
+        <h3>成るように成る！</h3>
+        <p>
+          実は、私が就職相談を始めたきっかけは自社の採用活動でした。面接でお会いする方の中には、自社の条件とは少し違うけれど、素晴らしい可能性を秘めた方が大勢いらっしゃいました。この人は別の場所なら、もっと輝けるのにもったいない…。<br />
+          そんな「もったいない」を私は無くしたい。企業側の本音を知る私だからこそできる、あなたにぴったりの場所探しに伴走します。
+        </p>
+        <p style="font-weight: bold; text-align: right">寒河江 一意</p>
+      </section>
+
+      <a
+        href="https://docs.google.com/forms/d/..."
+        class="btn-red"
+        target="_blank"
+        rel="noopener"
+        >無料で相談してみる</a
+      >
+
+      <section class="trouble">
+        <h3>こんな<span>悩み</span>はありませんか？</h3>
+        <div class="trouble-items">
+          <img
+            src="img/trouble-1.png"
+            alt="担当エージェントを自分で選びたい"
+            class="trouble-img"
+          />
+          <img
+            src="img/trouble-2.png"
+            alt="転職活動の裏側の本音を知りたい"
+            class="trouble-img"
+          />
+          <img
+            src="img/trouble-3.png"
+            alt="上手くいかなくて不安で孤独だ"
+            class="trouble-img"
+          />
+        </div>
+      </section>
+
+      <div class="solution-title">そんなあなたに私が寄り添います</div>
+
+      <section class="features">
+        <div class="feature-item">
+          <img src="img/sagae-1.png" alt="必ず担当" class="feature-img" />
+          <div class="feature-text">
+            <h4>必ず寒河江が担当</h4>
+            <p>
+              みんな一度は会っているから安心。まずは雑談からでOK。自己分析サポートだけでなく、応募書類の添削から面接対策まで完全無料で徹底的に寄り添います。
+            </p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="img/sagae-2.png" alt="IT・WEBに強い" class="feature-img" />
+          <div class="feature-text">
+            <h4>ITやWEBのことはお任せ</h4>
+            <p>
+              訓練生の「なぜここで学ぶのか」に長年向き合ってきた実績で培った、非公開求人を含む数千の案件の中から「ITやWEB×これまでの職歴」のハイブリッド職探しに絶対の自信あり！
+            </p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <img src="img/sagae-3.png" alt="いつでも相談" class="feature-img" />
+          <div class="feature-text">
+            <h4>24時間365日待機</h4>
+            <p>
+              私がいるから大丈夫。あなたの価値観を知り就活への改善点を見つけて次への一歩に変えます。一緒に再スタートを切りましょう。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <a
+        href="https://docs.google.com/forms/d/..."
+        class="btn-red"
+        target="_blank"
+        rel="noopener"
+        >寒河江に相談する</a
+      >
+
+      <section class="flow">
+        <h2 class="flow-title">お申し込みから内定まで</h2>
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-left">
+            <h5>相談申し込み</h5>
+            <div class="step-icon-box">
+              <img src="img/icon01.png" alt="申し込み" />
+            </div>
+          </div>
+          <div class="step-content">
+            <p>
+              サイト内の申し込みボタンからまずは申し込みを行います。後程、日程調整のお願いメールが届きますので、日程調整をお願いします。
+            </p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-left">
+            <h5>対面で面談</h5>
+            <div class="step-icon-box">
+              <img src="img/icon02.png" alt="対面面談" />
+            </div>
+          </div>
+          <div class="step-content">
+            <p>
+              寒河江との対面面談をテラハウスにて1対1で行います。向いている仕事内容についてのお話や、応募書類の添削もいたします。目安は１時間程度です。
+            </p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-left">
+            <h5>オンライン面談</h5>
+            <div class="step-icon-box">
+              <img src="img/icon03.png" alt="オンライン面談" />
+            </div>
+          </div>
+          <div class="step-content">
+            <p>
+              活動を進めていただき、2度目はWebでの面談を行います。進捗状況や困りごとをお聞かせください。活動状況により1～3回程度予定しております。
+            </p>
+          </div>
+        </div>
+        <div class="naitei">
+          <p class="naitei-notice">
+            ※状況に応じて変更が生じる場合があります。<br />予めご了承ください。
+          </p>
+          <span style="font-size: 24px; color: #519ba2">▼</span><br />内定
+        </div>
+        <a
+          href="https://docs.google.com/forms/d/..."
+          class="btn-red"
+          target="_blank"
+          rel="noopener"
+          >無料相談申し込み</a
+        >
+      </section>
+
+      <section class="movie-section">
+        <div class="movie-header"><p class="movie-label">MOVIES</p></div>
+        <div class="movie-grid">
+          <div class="movie-item">
+            <p class="movie-top">▼CM動画を見る</p>
+            <div
+              class="movie-thumb modal-trigger"
+              data-src="movie/cm15_movie_sagae.mp4"
+            >
+              <img
+                src="img/click.png"
+                alt="CLICK"
+                class="click-overlap pc-only"
+              />
+              <img src="img/tap.png" alt="TAP" class="click-overlap sp-only" />
+              <video class="target-video" autoplay muted loop playsinline>
+                <source src="movie/sagae-hidari.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h4>【CM】しっかりサポート編</h4>
+            <p class="movie-text">
+              立ち止まっているあなたの背中を優しく押してくれる、「ここから始まる物語」。
+            </p>
+          </div>
+          <div class="movie-item">
+            <p class="movie-top">▼検証動画を見る</p>
+            <div
+              class="movie-thumb modal-trigger"
+              data-src="movie/SNS_movie_sagae.mp4"
+            >
+              <img
+                src="img/click.png"
+                alt="CLICK"
+                class="click-overlap pc-only"
+              />
+              <img src="img/tap.png" alt="TAP" class="click-overlap sp-only" />
+              <video class="target-video" autoplay muted loop playsinline>
+                <source src="movie/sagae-migi.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <h4>【検証】特技の真相編</h4>
+            <p class="movie-text">
+              「人の良いところ探し」が特技ということで、その実力を検証してみました。
+            </p>
+          </div>
+        </div>
+        <a
+          href="https://docs.google.com/forms/d/..."
+          class="btn-red"
+          style="margin-top: 40px"
+          >寒河江に会いに行く</a
+        >
+      </section>
+
+      <footer class="footer-simple-center">
+        <div class="footer-logo-box">
+          <img src="img/logo5.svg" alt="お仕事紹介マッチング" />
+        </div>
+        <p class="copyright">©2026 お仕事紹介マッチング</p>
+      </footer>
+    </div>
+
+    <div id="video-modal" class="video-modal">
+      <div class="video-modal-content">
+        <span class="video-close">×</span>
+        <video id="modal-video" controls>
+          <source src="" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loader = document.getElementById("loading-wrapper");
+        setTimeout(() => {
+          if (!loader.classList.contains("loaded"))
+            loader.classList.add("loaded");
+        }, 2000);
+
+        const modal = document.getElementById("video-modal");
+        const modalVideo = document.getElementById("modal-video");
+        const triggers = document.querySelectorAll(".modal-trigger");
+
+        triggers.forEach((trigger) => {
+          trigger.addEventListener("click", function () {
+            const videoSrc = this.getAttribute("data-src");
+            if (videoSrc) {
+              modalVideo.src = videoSrc;
+              modal.style.display = "flex";
+              modalVideo.muted = false;
+              modalVideo.play();
+            }
+          });
+        });
+
+        const closeModal = () => {
+          modal.style.display = "none";
+          modalVideo.pause();
+          modalVideo.src = "";
+        };
+
+        document
+          .querySelector(".video-close")
+          .addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) closeModal();
+        });
+      });
+    </script>
+  </body>
+</html>
