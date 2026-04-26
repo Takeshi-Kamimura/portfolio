@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TAKESHI Portfolio</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- Fonts: Cormorant Garamond (headings, Latin) + Noto Sans JP (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container navbar-flex">
+        <a class="site-logo" href="./">TAKESHI's Portfolio</a>
+
+        <nav class="main-menu">
+          <ul class="main-menu-list">
+            <li><a href="#works">Works</a></li>
+            <li><a href="#thinking">Thinking</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a class="nav-cta" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu">
+          <button class="mobile-menu-toggle" type="button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="mobile-menu-items">
+            <ul class="mobile-menu-list">
+              <li><a href="#works">Works</a></li>
+              <li><a href="#thinking">Thinking</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container hero-flex">
+        <div class="hero-content">
+          <p class="section-label">Web / UI Design</p>
+
+          <h1>届くデザインを。</h1>
+
+          <p>言葉も、映像も、画面設計も。</p>
+
+          <a class="btn" href="#works">作品を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works -->
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section-header">
+          <h2>Works</h2>
+          <div class="heading-border"></div>
+          <p>
+            制作した作品。企画から実装まで、一貫して伝わるかを軸にしています。
+          </p>
+        </div>
+
+        <div class="works-grid">
+          <!-- Featured: 寒河江LP -->
+          <div class="work-card featured">
+            <div class="thumbnail-container">
+              <img
+                src="./assets/img/pickles.png"
+                alt="架空サイト『ピックルス』サムネイル"
+              />
+            </div>
+
+            <div class="work-body">
+              <p class="work-label">Featured — 1st Place</p>
+
+              <h3>
+                <a href="./works/sagae.html">
+                  寒河江市 求人マッチングサービスLP
+                </a>
+              </h3>
+
+              <p class="work-summary">
+                チーム制作（競合提案形式）。LP・15秒CM・TikTok風動画まで一貫して担当し、クラス内で1位を獲得。
+              </p>
+
+              <ul class="tag-list">
+                <li>LP</li>
+                <li>Video</li>
+                <li>Copy</li>
+                <li>Team</li>
+              </ul>
+
+              <a class="text-link" href="./works/sagae.html">
+                ケーススタディを見る →
+              </a>
+            </div>
+          </div>
+
+          <!-- サクセス -->
+          <div class="work-card">
+            <a href="./works/success.html">
+              <div class="thumbnail-container">
+                <img
+                  src="./assets/img/TOP_1920icon.png"
+                  alt="株式会社サクセス サムネイル"
+                />
+              </div>
+            </a>
+
+            <div class="work-body">
+              <h3>
+                <a href="./works/success.html">
+                  株式会社サクセス（コーポレートサイト）
+                </a>
+              </h3>
+
+              <p class="work-summary">
+                コーポレートサイト改善提案。チーム制作・競合形式で3位。
+              </p>
+
+              <ul class="tag-list">
+                <li>Figma</li>
+                <li>UI</li>
+                <li>Responsive</li>
+              </ul>
+
+              <a class="text-link" href="./works/success.html">
+                ケーススタディを見る →
+              </a>
+            </div>
+          </div>
+
+          <!-- 懸垂LP -->
+          <div class="work-card">
+            <div class="thumbnail-container">
+              <img
+                src="./assets/img/pickles.png"
+                alt="架空サイト『ピックルス』サムネイル"
+              />
+            </div>
+
+            <div class="work-body">
+              <h3>架空LPサイト『懸垂』</h3>
+              <p class="work-summary">
+                個人制作。コンバージョンまでの動線設計を自分の判断で組み立てる。
+              </p>
+              <ul class="tag-list">
+                <li>Figma</li>
+                <li>LP</li>
+                <li>Marketing</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ピクルス -->
+          <div class="work-card">
+            <a href="./works/pickles.html">
+              <div class="thumbnail-container">
+                <img
+                  src="./assets/img/pickles.png"
+                  alt="架空サイト『ピックルス』サムネイル"
+                />
+              </div>
+            </a>
+
+            <div class="work-body">
+              <h3>
+                <a href="./works/pickles.html"> 西洋風漬物『Pickles』 </a>
+              </h3>
+
+              <p class="work-summary">
+                レイアウト崩れのあった初回課題を、構造から見直して再実装（Before
+                / After）。
+              </p>
+
+              <ul class="tag-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Responsive</li>
+              </ul>
+
+              <a class="text-link" href="./works/pickles.html">
+                ケーススタディを見る →
+              </a>
+            </div>
+          </div>
+
+          <!-- ロゴ -->
+          <div class="work-card">
+            <a href="./works/logo.html">
+              <div class="thumbnail-container center">
+                <img
+                  src="./assets/img/pickles.png"
+                  alt="架空サイト『ピックルス』サムネイル"
+                />
+              </div>
+            </a>
+
+            <div class="work-body">
+              <h3>
+                <a href="./works/logo.html">架空企業『futuretech』ロゴ</a>
+              </h3>
+              <p class="work-summary">
+                来季の教材ロゴに選出（クラス30人中5人）。既存サイトと一貫する配色と有機的なフォルムを設計。
+              </p>
+              <ul class="tag-list">
+                <li>Illustrator</li>
+                <li>Logo</li>
+                <li>Branding</li>
+              </ul>
+
+              <a class="text-link" href="./works/logo.html">
+                ケーススタディを見る →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thinking -->
+    <section class="section" id="thinking">
+      <div class="container">
+        <div class="section-header">
+          <h2>Thinking</h2>
+          <div class="heading-border"></div>
+          <p>制作の方針と、強みについて</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Design Policy</h3>
+            <ul>
+              <li>どの順で、どのコントラストで見せるか。</li>
+              <li>
+                大学では岩明均『寄生獣』を題材にコマ割りの構造を研究しました。普段は平板な絵柄の作家が、見開きだけ写実的になる。その落差が「日常に潜む異物」の怖さを一気に引き上げていました。視覚的な対比が情報の強度を決める、という感覚が、Web設計でも自分の基準になっています。
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Strengths</h3>
+            <ul>
+              <li>「なぜそうしたか」を言葉にできる。</li>
+              <li>
+                芸術工学では「なぜ人はこれを美しいと感じるのか」を、感性と論理の両面から問い続けてきました。デザインの選択には必ず理由がある。その理由を言語化してチームに渡せること、これが自分の強みです。
+              </li>
+              <li>細部まで確認を重ね、最後まで責任を持って仕上げます。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About</h2>
+          <div class="heading-border"></div>
+          <p>背景・スキル・経歴について</p>
+        </div>
+
+        <div class="about-profile">
+          <p>
+            論理と感性を同時に扱う学問として芸術工学を選びました。「なぜ人はこれを美しいと感じるのか」を、理系と文系の視点で解剖する訓練が、デザイン思想の土台です。
+          </p>
+          <p>
+            放送作家として10年、どうやったら笑顔になってもらえるかを考えてきました。言葉ひとつで空気が変わってしまう、という経験が、伝わるUIを作りたいという気持ちの原点になっています。
+          </p>
+          <p>映画と焼き鳥と懸垂が好き。</p>
+
+          <div class="about-links">
+            <a href="https://note.com/omame00" target="_blank" rel="noopener">
+              <img src="./assets/img/note-icon.svg" alt="note" width="24" />
+            </a>
+            <a href="https://github.com/your-id" target="_blank" rel="noopener">
+              <img src="./assets/img/github-icon.svg" alt="GitHub" width="24" />
+            </a>
+          </div>
+        </div>
+
+        <div class="about-vlog">
+          <p>気合を入れに滝行に行きました。</p>
+          <div class="vlog-embed">
+            <iframe
+              src="https://www.youtube.com/embed/88dPBbQPoEg?start=193"
+              title="滝行 vlog"
+              frameborder="0"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Skills</h3>
+            <ul>
+              <li>Figma / Adobe XD</li>
+              <li>Photoshop / Illustrator</li>
+              <li>Premiere Pro</li>
+              <li>HTML / CSS</li>
+              <li>JavaScript（学習中）</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Career</h3>
+            <ul>
+              <li>2026〜　職業訓練校 Webエキスパート科</li>
+              <li>2015〜　放送作家（人力舎・K-PRO）</li>
+              <li>2014　　九州大学大学院芸術工学府 修了</li>
+              <li>2012　　九州大学芸術工学部 卒業</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact</h2>
+          <div class="heading-border"></div>
+          <p>お気軽にご連絡ください</p>
+        </div>
+
+        <div class="contact-box">
+          <p>
+            メール：
+            <a href="mailto:example@example.com">example@example.com</a>
+          </p>
+          <a class="btn" href="mailto:example@example.com">メールする</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-flex">
+        <p>© <span id="year"></span> TAKESHI's Portfolio</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const SCROLL_OFFSET = 80;
+
+        // Navbar Scroll Effect
+        const navbar = document.querySelector(".navbar");
+        if (navbar) {
+          window.addEventListener("scroll", function () {
+            if (window.scrollY > 20) {
+              navbar.classList.add("navbar-scroll");
+            } else {
+              navbar.classList.remove("navbar-scroll");
+            }
+          });
+        }
+
+        // Mobile Menu Toggle
+        const toggle = document.querySelector(".mobile-menu-toggle");
+        const menu = document.querySelector(".mobile-menu-items");
+
+        if (toggle && menu) {
+          toggle.addEventListener("click", function () {
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
+          });
+
+          menu.addEventListener("click", function (e) {
+            if (e.target.tagName === "A") {
+              menu.classList.remove("active");
+              toggle.classList.remove("active");
+            }
+          });
+        }
+
+        // Smooth Scroll
+        const anchorLinks = document.querySelectorAll('a[href^="#"]');
+        anchorLinks.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            const href = link.getAttribute("href");
+            if (!href || href === "#") return;
+
+            const target = document.querySelector(href);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const top =
+              target.getBoundingClientRect().top +
+              window.pageYOffset -
+              SCROLL_OFFSET;
+
+            window.scrollTo({ top: top, behavior: "smooth" });
+
+            if (menu && toggle) {
+              menu.classList.remove("active");
+              toggle.classList.remove("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

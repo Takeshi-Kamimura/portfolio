@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>組織</title>
+<style type="text/css">
+*, ::before, ::after {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #1F2A44;
+}
+main {
+	margin: 0 auto;
+	max-width: 1200px;
+	text-align: center;
+}
+img {
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+}
+body {
+	line-height: 1.8;
+}
+.mv-top {
+	margin-bottom: 95px;
+}
+.organization h2 {
+	padding-bottom: 50px;
+}
+.hiyoko {
+	margin: 50px 0;
+}
+.box-flex {
+	display: flex;
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-bottom: 70px;
+}
+.slide {
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 650px;
+}
+.slide p{
+    margin: 0 10px;
+}
+.hiyoko_sp {
+	margin: 50px 30px;
+	display: none;
+}
+.hiyoko_sp img {
+	padding: 30px 0;
+}
+@media (max-width:600px){
+section {
+	margin: 0 30px;
+}
+.hiyoko {
+	display: none;
+}
+.hiyoko_sp {
+	display: block;
+}
+.show img {
+	transform: translateY(100px);
+	opacity: 0;
+}
+
+.show img.fade-in {
+	opacity: 1;
+	transform: translateY(0);
+	transition:1s;
+}
+
+</style>
+<link href="css/header-footer.css" rel="stylesheet" type="text/css">
+<link href="css/slick.css" rel="stylesheet" type="text/css">
+<link href="css/slick-theme.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('img/btn1_on.png')">
+<header>
+  <h1><a href="index.html"><img src="img/logo.png" width="254" height="47" alt="success"/></a></h1>
+  <div class="nav-button">
+	  <div class="nav-button-relative">
+  <span></span>
+  <span></span>
+  <span></span>
+</div></div>
+	<nav>
+    <div class="nav-none">
+      <ul>
+        <li><a href="index.html"><img src="img/btn1.png" alt="" width="128" height="54" id="btn1" onMouseOver="MM_swapImage('btn1','','img/btn1_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+        <li><a href="services.html"><img src="img/btn2.png" alt="" width="128" height="54" id="btn2" onMouseOver="MM_swapImage('btn2','','img/btn2_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+        <li class="nav_list"><a href="#"><img src="img/btn3_Group.png" alt="" width="128" height="54" id="btn3" onMouseOver="MM_swapImage('btn3','','img/btn3_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a>
+          <ul class="dropdown_lists">
+            <li class="dropdown_list">
+              <a href="about.html">会社概要</a></li>
+            <li class="dropdown_list">
+				<a href="philosophy.html">理念</a></li>
+            <li class="dropdown_list">
+              <a href="organization.html">組織</a></li>
+            <li class="dropdown_list">
+              <a href="https://newsuccess.hatenablog.com/" target="_blank">社長ブログ</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.rico-web.net/lunch-lp/success/" target="_blank"><img src="img/btn4.png" alt="" width="128" height="54" id="btn4" onMouseOver="MM_swapImage('btn4','','img/btn4_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+        <li><a href="contact.html"><img src="img/btn5.png" alt="" width="130" height="54" id="btn5" onMouseOver="MM_swapImage('btn5','','img/btn5_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+      </ul>
+    </div>
+    <div class="nav600px">
+  <ul>
+    <div class="blogs">
+      <li>社長ブログ・発信</li>
+      <li>
+        <div class="nav-icon"><a href="https://newsuccess.hatenablog.com/" target="_blank"><img src="img/icon_blog.png" alt=""/></a><a href="https://note.com/success_note0311" target="_blank"><img src="img/icon_note.png" alt=""/></a><a href="https://lin.ee/X6Y6Py3" target="_blank"><img src="img/icon_line.png" alt=""/></a></div>
+      </li>
+    </div>
+    <li><a href="index.html">TOP</a></li>
+    <li><a href="services.html">事業内容</a></li>
+    <li><a href="about.html">会社概要</a></li>
+    <li><a href="philosophy.html">企業理念</a></li>
+    <li><a href="organization.html">組織</a></li>
+    <li><a href="https://www.rico-web.net/lunch-lp/success/">採用</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li><a href="policies.html">各種許諾</a></li>
+    <li><a href="sitemap.html">サイトマップ</a></li>
+  </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="organization">
+ <div class="mv-top">
+  <h1><img src="img/organization-top.png" width="1200" height="210" alt="organization_top"/></h1>
+ </div>
+ <section>
+   <h2><img src="img/h2_choose.png" width="416" height="51" alt="選ばれる６つの理由"/></h2>
+   <p>「未経験だから不安」を、</p>
+   <p>「できることが増えていく実感」に変えていく。</p>
+   <p>私たちは、成長の過程に寄り添う研修とチームづくりを大切にしています。</p>
+   <p class="hiyoko"><img src="img/hiyoko.png" width="1063" height="598" alt="ひよこPC"/></p>
+   <div class="hiyoko_sp show">
+     <p><img src="img/hiyoko_1.png" alt="ひよこSP_1"/></p>
+     <p><img src="img/hiyoko_2.png" alt="ひよこSP_2"/></p>
+     <p><img src="img/hiyoko_3.png" alt="ひよこSP_3"/></p>
+     <p><img src="img/hiyoko_4.png" alt="ひよこSP_4"/></p>
+     <p><img src="img/hiyoko_5.png" alt="ひよこSP_5"/></p>
+     <p><img src="img/hiyoko_6.png" alt="ひよこSP_6"/></p>
+     <p><img src="img/hiyoko_7.png" alt="ひよこSP_7"/></p>
+   </div>
+   <h2><img src="img/success_numbers.png" width="266" height="53" alt=""/></h2>
+   <p>人の成長と事業の成長が同時に進んでいること。</p>
+   <p>それが、サクセスの最大の強みです。</p>
+  <div class="box-flex show">
+    <p><img src="img/graph_1.png" width="454" height="484" alt="グラフ1"/></p>
+    <p><img src="img/graph_2.png" width="454" height="484" alt="グラフ2"/></p>	 
+    <p><img src="img/graph_3.png" width="454" height="484" alt="グラフ3"/></p>
+    <p><img src="img/graph_4.png" width="454" height="484" alt="グラフ4"/></p>
+  </div>
+   <h2><img src="img/h2_life.png" width="419" height="50" alt="研修・旅行"/></h2>
+   <p>社員旅行（家族参加OK）や忘年会など、交流イベントも充実。</p>
+   <p>部署を越えてつながれる環境があります。</p>
+   <div class="slide">
+     <p><img src="img/team1.jpg" width="550" height="330" alt="社員写真1"/></p>
+     <p><img src="img/team2.jpg" alt="社員写真2"/></p>
+     <p><img src="img/team3.jpg" alt="社員写真3"/></p>
+     <p><img src="img/team4.jpg" alt="社員写真4"/></p>
+     <p><img src="img/team5.jpg" alt="社員写真5"/></p>
+     <p><img src="img/team6.jpg" alt="社員写真6"/></p>
+   </div>
+ </section>
+</main>
+  <div class="icon">
+    <p><a href="https://newsuccess.hatenablog.com/" target="_blank"><img src="img/icon_blog.png" width="84" height="84" alt=""/></a></p>
+    <p><a href="https://note.com/success_note0311" target="_blank"><img src="img/icon_note.png" width="84" height="84" alt=""/></a></p>
+    <p><a href="https://lin.ee/X6Y6Py3" target="_blank"><img src="img/icon_line.png" width="84" height="84" alt=""/></a></p>
+　</div>
+<footer>
+  <div class="footerin">
+  <img src="img/wave.png" alt="" width="1920" height="71" class="waveimg"/>
+  <div class="wave">
+    <div class="menu"> <a href="index.html"><img src="img/logo.png" width="254" height="47" alt="success"/></a>
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="services.html">事業内容</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="philosophy.html">理念</a></li>
+        <li><a href="organization.html">組織</a></li>
+        <li><a href="https://newsuccess.hatenablog.com/">BLOG</a></li>
+        <li><a href="https://www.rico-web.net/lunch-lp/success/">採用</a></li>
+        </ul>
+      </div>
+    <div class="cr">
+      <p>&copy;2026 Relume. All rights reserved.</p>
+      <ul>
+        <li><a href="img/privacy_policy.pdf">個人情報保護方針</a></li>
+        <li><a href="policies.html">利用許諾・免責事項</a></li>
+        <li><a href="sitemap.html">サイトマップ</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+</footer>
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/jquery.inview.min.js"></script>
+<script>
+	$(function() {
+    $(".slide").slick({
+		dots: true,
+		centerMode: true, 
+	});
+	$(".show img").on("inview", function(event,isInviwe){
+	  if(isInviwe){
+	    $(this).addClass("fade-in");
+	  } else{
+		  $(this).removeClass("fade-in");
+	  }
+  });
+	$(".nav-button").on("click",function() {
+			  $("body").toggleClass("menu-open");
+	});
+	$(document).on('click', '.menu-open .nav600px', function() {
+			  $('.nav-button').trigger('click');
+	});
+	$(window).on("scroll", function() {
+		if ($(this).scrollTop() > 100) {
+				$(".icon").fadeIn();							// 
+		} else {													
+				$(".icon").fadeOut();						// 
+		}
+ 	});
+});
+	
+</script>
+</body>
+</html>

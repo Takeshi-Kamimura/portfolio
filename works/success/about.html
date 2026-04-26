@@ -1,0 +1,558 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>会社概要</title>
+    <style type="text/css">
+      *,
+      ::before,
+      ::after {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: #1f2a44;
+      }
+      main {
+        margin: 0 auto;
+        max-width: 1200px;
+        text-align: center;
+      }
+      img {
+        vertical-align: top;
+        max-width: 100%;
+        height: auto;
+      }
+      body {
+        line-height: 1.8;
+      }
+      .mv-top {
+        margin-bottom: 95px;
+      }
+      table {
+        border: black solid 1px;
+        margin: 10px auto;
+        margin-bottom: 90px;
+        text-align: left;
+        max-width: 1064px;
+        height: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .border {
+        border-bottom: black solid 1px;
+      }
+      .about-box {
+        display: flex;
+        height: 260px;
+        justify-content: space-between;
+        position: relative;
+      }
+      .about-box .text {
+        text-align: left;
+        border-left: 4px solid black;
+        position: absolute;
+        left: 50%;
+        padding-left: 20px;
+        height: 240px;
+        line-height: 2;
+      }
+      .about-box .maru::after {
+        content: "●";
+        position: absolute;
+        left: -10px;
+        bottom: -25px;
+      }
+      .about-box .text2 {
+        text-align: right;
+        border-right: 4px solid black;
+        position: absolute;
+        right: calc(50% - 4px);
+        padding-right: 20px;
+        line-height: 2;
+        height: 240px;
+      }
+      .about-box .text2::after {
+        content: "●";
+        position: absolute;
+        bottom: -25px;
+        right: -10px;
+      }
+      .timeline {
+        margin-top: 20px;
+        margin-right: 0;
+        margin-left: 0;
+        position: relative;
+      }
+      .timeline h3 {
+        color: #7fafcf;
+        font-size: 20px;
+      }
+      .timeline p {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .timeline span {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .asirai {
+        position: relative;
+      }
+      .asirai img {
+        position: absolute;
+        top: 37px;
+        left: -5px;
+      }
+      .about_asirai {
+        margin: 220px auto;
+        height: auto;
+      }
+
+      @media (max-width: 600px) {
+        section,
+        table {
+          margin: 0 30px;
+        }
+        .about_asirai {
+          margin: 100px 10px;
+        }
+      }
+    </style>
+    <link href="css/header-footer.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+      function MM_preloadImages() {
+        //v3.0
+        var d = document;
+        if (d.images) {
+          if (!d.MM_p) d.MM_p = new Array();
+          var i,
+            j = d.MM_p.length,
+            a = MM_preloadImages.arguments;
+          for (i = 0; i < a.length; i++)
+            if (a[i].indexOf("#") != 0) {
+              d.MM_p[j] = new Image();
+              d.MM_p[j++].src = a[i];
+            }
+        }
+      }
+
+      function MM_swapImgRestore() {
+        //v3.0
+        var i,
+          x,
+          a = document.MM_sr;
+        for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++)
+          x.src = x.oSrc;
+      }
+
+      function MM_findObj(n, d) {
+        //v4.01
+        var p, i, x;
+        if (!d) d = document;
+        if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+          d = parent.frames[n.substring(p + 1)].document;
+          n = n.substring(0, p);
+        }
+        if (!(x = d[n]) && d.all) x = d.all[n];
+        for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+        for (i = 0; !x && d.layers && i < d.layers.length; i++)
+          x = MM_findObj(n, d.layers[i].document);
+        if (!x && d.getElementById) x = d.getElementById(n);
+        return x;
+      }
+
+      function MM_swapImage() {
+        //v3.0
+        var i,
+          j = 0,
+          x,
+          a = MM_swapImage.arguments;
+        document.MM_sr = new Array();
+        for (i = 0; i < a.length - 2; i += 3)
+          if ((x = MM_findObj(a[i])) != null) {
+            document.MM_sr[j++] = x;
+            if (!x.oSrc) x.oSrc = x.src;
+            x.src = a[i + 2];
+          }
+      }
+    </script>
+  </head>
+
+  <body onLoad="MM_preloadImages('img/btn1_on.png')">
+    <header>
+      <h1>
+        <a href="index.html"
+          ><img src="img/logo.png" width="254" height="47" alt="success"
+        /></a>
+      </h1>
+      <div class="nav-button">
+        <div class="nav-button-relative">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav>
+        <div class="nav-none">
+          <ul>
+            <li>
+              <a href="index.html"
+                ><img
+                  src="img/btn1.png"
+                  alt=""
+                  width="128"
+                  height="54"
+                  id="btn1"
+                  onMouseOver="MM_swapImage('btn1','','img/btn1_on.png',1)"
+                  onMouseOut="MM_swapImgRestore()"
+              /></a>
+            </li>
+            <li>
+              <a href="services.html"
+                ><img
+                  src="img/btn2.png"
+                  alt=""
+                  width="128"
+                  height="54"
+                  id="btn2"
+                  onMouseOver="MM_swapImage('btn2','','img/btn2_on.png',1)"
+                  onMouseOut="MM_swapImgRestore()"
+              /></a>
+            </li>
+            <li class="nav_list">
+              <a href="#"
+                ><img
+                  src="img/btn3_Group.png"
+                  alt=""
+                  width="128"
+                  height="54"
+                  id="btn3"
+                  onMouseOver="MM_swapImage('btn3','','img/btn3_on.png',1)"
+                  onMouseOut="MM_swapImgRestore()"
+              /></a>
+              <ul class="dropdown_lists">
+                <li class="dropdown_list">
+                  <a href="about.html">会社概要</a>
+                </li>
+                <li class="dropdown_list">
+                  <a href="philosophy.html">理念</a>
+                </li>
+                <li class="dropdown_list">
+                  <a href="organization.html">組織</a>
+                </li>
+                <li class="dropdown_list">
+                  <a href="https://newsuccess.hatenablog.com/" target="_blank"
+                    >社長ブログ</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="https://www.rico-web.net/lunch-lp/success/"
+                target="_blank"
+                ><img
+                  src="img/btn4.png"
+                  alt=""
+                  width="128"
+                  height="54"
+                  id="btn4"
+                  onMouseOver="MM_swapImage('btn4','','img/btn4_on.png',1)"
+                  onMouseOut="MM_swapImgRestore()"
+              /></a>
+            </li>
+            <li>
+              <a href="contact.html"
+                ><img
+                  src="img/btn5.png"
+                  alt=""
+                  width="130"
+                  height="54"
+                  id="btn5"
+                  onMouseOver="MM_swapImage('btn5','','img/btn5_on.png',1)"
+                  onMouseOut="MM_swapImgRestore()"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav600px">
+          <ul>
+            <div class="blogs">
+              <li>社長ブログ・発信</li>
+              <li>
+                <div class="nav-icon">
+                  <a href="https://newsuccess.hatenablog.com/" target="_blank"
+                    ><img src="img/icon_blog.png" alt="" /></a
+                  ><a href="https://note.com/success_note0311" target="_blank"
+                    ><img src="img/icon_note.png" alt="" /></a
+                  ><a href="https://lin.ee/X6Y6Py3" target="_blank"
+                    ><img src="img/icon_line.png" alt=""
+                  /></a>
+                </div>
+              </li>
+            </div>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="services.html">事業内容</a></li>
+            <li><a href="about.html">会社概要</a></li>
+            <li><a href="philosophy.html">企業理念</a></li>
+            <li><a href="organization.html">組織</a></li>
+            <li>
+              <a href="https://www.rico-web.net/lunch-lp/success/">採用</a>
+            </li>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="policies.html">各種許諾</a></li>
+            <li><a href="sitemap.html">サイトマップ</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="about">
+      <div class="mv-top">
+        <h1>
+          <img src="img/about-top.png" width="1200" height="210" alt="" />
+        </h1>
+      </div>
+      <h2><img src="img/h2_company.png" width="134" height="46" alt="" /></h2>
+      <table>
+        <tbody>
+          <tr>
+            <td class="border">
+              <p><strong>会社名</strong></p>
+              <p>株式会社サクセス</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>所在地</strong></p>
+              <p>〒141-0031　東京都品川区西五反田2丁目12番3号第一誠実ビル6F</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>連絡先</strong></p>
+              <p>TEL　03-6417-0410</p>
+              <p>FAX　03-64170413</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>設立</strong></p>
+              <p>1987年7月24日</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>取締役</strong></p>
+              <p>代表取締役社長　　　佐藤　秀晴</p>
+              <p>代表取締役会長　　　海野　恵理</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>資本金</strong></p>
+              <p>3.400万円</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>売上高</strong></p>
+              <p>3.5億円</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>事業内容</strong></p>
+              <p>電算室の運用管理</p>
+              <p>ネットワークシステムの運用管理</p>
+              <p>業務用ソフトウェアの設計開発</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>従業員数</strong></p>
+              <p>45名</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>取引銀行</strong></p>
+              <p>
+                りそな銀行 渋谷支店 / 三菱UFJ銀行 渋谷中央支店 / みずほ銀行
+                渋谷中央支店 / 東日本銀行 渋谷支店
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td class="border">
+              <p><strong>主要取引先</strong></p>
+              <p>
+                NTTグループ各社 / 株式会社シー・エス・エス /
+                株式会社システックス
+              </p>
+              <p>
+                株式会社ユニバーサル・コンピューター・システム /
+                TDCソフト株式会社
+              </p>
+              <p>
+                ダックシステムズ株式会社 / 株式会社システナ /
+                その他パートナー各社
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p><strong>登録許認可</strong></p>
+              <p>プライバシーマーク（認定番号：17003631(03)）</p>
+              <p><img src="img/mark1.png" /></p>
+              <p>健康優良企業「銀の認定」</p>
+              <p><img src="img/mark2.png" /></p>
+              <p>労働者派遣事業許可番号　派13－307510</p>
+              <p>派遣事業平均原価率　70％　（2022年6月度現在）</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2><img src="img/h2_timeline.png" width="58" height="44" alt="" /></h2>
+      <section class="timeline">
+        <div class="about-box">
+          <p></p>
+          <div class="text maru">
+            <h3>1987年7月</h3>
+            <p><span>会社設立</span></p>
+            <p>
+              仙台市に設立。制御用ソフトウェアの<br />
+              開発を主体とする
+            </p>
+          </div>
+        </div>
+        <div class="about-box">
+          <div class="text2">
+            <h3>1991年3月</h3>
+            <p><span>業務拡張</span></p>
+            <p>
+              業務拡張により渋谷に<br />
+              開発室を開設する
+            </p>
+          </div>
+          <p></p>
+        </div>
+        <div class="about-box">
+          <p></p>
+          <div class="text maru">
+            <h3>2000年11月</h3>
+            <p><span>組織改編</span></p>
+            <p>株式会社サクセスに組織を改編する</p>
+          </div>
+        </div>
+        <div class="about-box">
+          <div class="text2">
+            <h3>2022年4月</h3>
+            <p><span>代表着任</span></p>
+            <p>
+              代表取締役会長に　佐藤　秀晴　就任<br />
+              代表取締役社長に　海野　恵理　就任
+            </p>
+          </div>
+          <p></p>
+        </div>
+        <div class="about-box">
+          <p></p>
+          <div class="text">
+            <h3>2026年1月</h3>
+            <div class="asirai">
+              <p><span>現在とこれから</span></p>
+              <p><img src="img/timeline_asirai.png" /></p>
+            </div>
+            <p>
+              制御用ソフトウェア開発を基盤に、<br />
+              次世代を見据えた<br />
+              体制づくりを進めている。
+            </p>
+          </div>
+        </div>
+      </section>
+      <p class="about_asirai"><img src="img/about_asirai.png" /></p>
+    </main>
+    　
+    <div class="icon">
+      <p>
+        <a href="https://newsuccess.hatenablog.com/" target="_blank"
+          ><img src="img/icon_blog.png" width="84" height="84" alt=""
+        /></a>
+      </p>
+      <p>
+        <a href="https://note.com/success_note0311" target="_blank"
+          ><img src="img/icon_note.png" width="84" height="84" alt=""
+        /></a>
+      </p>
+      <p>
+        <a href="https://lin.ee/X6Y6Py3" target="_blank"
+          ><img src="img/icon_line.png" width="84" height="84" alt=""
+        /></a>
+      </p>
+      　
+    </div>
+    <footer>
+      <div class="footerin">
+        <img
+          src="img/wave.png"
+          alt=""
+          width="1920"
+          height="71"
+          class="waveimg"
+        />
+        <div class="wave">
+          <div class="menu">
+            <a href="index.html"
+              ><img src="img/logo.png" width="254" height="47" alt="success"
+            /></a>
+            <ul>
+              <li><a href="index.html">TOP</a></li>
+              <li><a href="services.html">事業内容</a></li>
+              <li><a href="about.html">会社概要</a></li>
+              <li><a href="philosophy.html">理念</a></li>
+              <li><a href="organization.html">組織</a></li>
+              <li><a href="https://newsuccess.hatenablog.com/">BLOG</a></li>
+              <li>
+                <a href="https://www.rico-web.net/lunch-lp/success/">採用</a>
+              </li>
+            </ul>
+          </div>
+          <div class="cr">
+            <p>&copy;2026 Relume. All rights reserved.</p>
+            <ul>
+              <li><a href="img/privacy_policy.pdf">個人情報保護方針</a></li>
+              <li><a href="policies.html">利用許諾・免責事項</a></li>
+              <li><a href="sitemap.html">サイトマップ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      $(function () {
+        $(".nav-button").on("click", function () {
+          $("body").toggleClass("menu-open");
+        });
+        $(document).on("click", ".menu-open .nav600px", function () {
+          $(".nav-button").trigger("click");
+        });
+        $(window).on("scroll", function () {
+          if ($(this).scrollTop() > 100) {
+            $(".icon").fadeIn(); //
+          } else {
+            $(".icon").fadeOut(); //
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

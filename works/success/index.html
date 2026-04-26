@@ -1,0 +1,584 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社サクセス</title>
+<style type="text/css">
+*,::before,::after {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #1F2A44;
+}
+img {
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+}
+body {
+	line-height: 1.8;
+	position: relative;
+}
+header {
+	max-width: 1200px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 64px;
+	margin: 0 auto;
+}
+h1 {
+	line-height: 1;
+}
+h1 img {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+main {
+	margin: 0 auto;
+	max-width: 1200px;
+	text-align: center;
+}
+.mv {
+	text-align: center;
+}
+.mv img  {
+	width: 100%;
+	height: auto;
+	line-height: 1;
+	position: relative;
+}
+.mv-catch  {
+	position: absolute;
+	top: 3%;
+	left: 50%;
+	background-repeat: no-repeat;
+	animation: fadeUp 1s ease-out forwards;
+	opacity: 0;
+}
+	
+@keyframes fadeUp {
+  	0% {
+    opacity: 0;
+	transform: translate(-50%, 30px);
+	}
+  	100% {
+   	opacity: 1;
+	transform: translate(-50%, 0);
+  	}
+}
+.mv600px   {
+	display: none;
+}
+.mv-catch600px {
+	display: none;
+}
+.nav600px {
+	display: none;
+}
+.nav-none> ul {
+	display: flex;
+	align-items: center;
+}
+nav li {
+	list-style-type: none;
+	margin-left: 10px;
+	text-align: center;
+}
+nav li li {
+	margin-left: 0px;
+}
+.nav_list {
+	position: relative;
+}
+.nav_list:hover .dropdown_lists {
+	display: block;
+	opacity: 1;
+}
+.dropdown_lists {
+	width: 120px;
+	position: absolute;
+	left: 4px;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.9);
+	-webkit-box-shadow: 0px 0px 1px
+#;
+	box-shadow: 0px 0px 1px
+#;
+	opacity: 0;
+	transition: 0.5s;
+	-webkit-box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+	box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+	z-index: 1;
+}
+.dropdown_list {
+	position: relative;
+	transition: all .3s;
+	text-align: center;
+}
+.dropdown_list:not(:first-child)::before {
+	content: "";
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.dropdown_list a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #1f2a44;
+	text-decoration: none;
+	position: relative;
+}
+.dropdown_list a:hover {
+	text-decoration: underline;
+}
+.dropdown_list a::before {
+	content: "";
+	display: block;
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	right: 15px;
+	top: calc(50% - 5px);
+}
+.container1 {
+	padding-bottom: 100px;
+}
+.container1 .title {
+	margin-top: 200px;
+	margin-bottom: 50px;
+}
+.container1 img {
+	/* [disabled]margin-bottom: 100px; */
+}
+.container2 .text {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.container2 {
+	margin-top: 80px;
+}
+.container2 .title {
+	position: relative;
+	background-image: url(img/asirai01.png);
+	background-size: 100px auto;
+	background-repeat: no-repeat;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-position: 0 -10px;
+	margin: 0 auto;
+	max-width: 400px;
+}
+.container2 .box {
+	margin-bottom: 60px;
+}
+.container2 .box img {
+	margin-bottom: 20px;
+}
+.box span {
+	font-size: 20px;
+}
+.wave {
+	background-color: #abdcf1;
+}
+.waveimg {
+	width: 100%;
+d
+	height: 71px;
+	height: 71px;
+}
+.menu {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	max-width: 1200px;
+	height: auto;
+}
+.menu img {
+	padding-left: 10px;
+}
+.menu ul {
+	display: flex;
+	list-style-type: none;
+	align-items: center;
+	white-space: nowrap;
+}
+.menu li {
+	max-width: 100%;
+	height: auto;
+	margin-left: 30px;
+}
+.menu a {
+	text-decoration: none;
+}
+.icon {
+	display: none;
+	text-align: right;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+}
+.cr {
+	display: flex;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	font-size: 12px;
+	justify-content: center;
+}
+.cr ul {
+	display: flex;
+	margin-right: 10px;
+}
+.cr li {
+	padding-top: 0;
+	padding-right: 20px;
+	padding-left: 20px;
+	list-style-type: none;
+}
+.cr a {
+	text-decoration: none;
+	/* [disabled]font-size: 12px; */
+}
+
+	
+	
+@media (max-width:600px){
+	header h1  {
+	z-index: 2;
+	width: 129px;
+	height: 24px;
+	position: fixed;
+		}
+	header h1 img {
+	margin-left: 20px;
+		}
+	.mv {
+		display: none;
+		}
+	.mv600px {
+	display: inline;
+		}
+	.mv600px img {
+		width: 100%;
+		height: auto;
+		position: relative;
+		display: inline;
+		}
+.mv-catch600px  {
+	position: absolute;
+	top: 4%;
+	transform: translate(-50%,-50%);
+	display: inline;
+	animation: fadeUp 1s ease-out forwards;
+	opacity: 0;
+	left: 50%;
+	width: 100%;
+	height: auto;
+		}
+.mv-catch600px img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+	@keyframes fadeUp {
+  		0% {
+    	opacity: 0;
+		transform: translate(-50%, 30px);
+		}
+  		100% {
+   		opacity: 1;
+		transform: translate(-50%, 0);
+		}}
+	nav li {
+		margin: 0px;
+		}
+	.nav600px {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: #abdcf1;
+		transition: 0.5s;
+		display: block;
+		left: 100%;
+		z-index: 1;
+		top: 0px;
+		padding-top: 100px;
+		overflow: auto;
+		}
+	.nav600px ul {
+		display: block;
+		}
+	.nav600px li {
+		margin: 20px 0;
+		}
+	.nav600px a {
+		padding-top: 0px;
+		padding-right: 0;
+		padding-left: 0;
+		padding-bottom: 30px;
+		text-decoration: none;
+		}
+	.blogs {
+		margin-bottom: 30px;
+		}
+	.nav-button {
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	z-index: 2;
+	right: 10%;
+		}
+.nav-button-relative {
+	position: relative;
+	z-index: 3;
+}
+	.nav-button span {
+		width: 30px;
+		height: 2px;
+		background-color: #1f2a44;
+		position: absolute;
+		left: 20px;
+		}
+	.nav-button span:nth-child(1) {
+		top: 12px;
+		}
+	.nav-button span:nth-child(2) {
+		top: 24px;
+		}
+	.nav-button span:nth-child(3) {
+		top: 36px;
+		}
+	.menu-open .nav600px {
+		left: 0px;
+		}
+	.menu-open .nav-button span:nth-child(1) {
+  		top: 24px;
+  		transform: rotate(315deg);
+		}
+	.menu-open .nav-button span:nth-child(2) {
+  		width: 0;
+  		left: 50%;
+		}
+	.menu-open .nav-button span:nth-child(3) {
+	  	top: 24px;
+	  	transform: rotate(-315deg);
+		}
+	.nav-button span {
+		transition: 0.3s;
+		} 
+	.container2 .text {
+		display: none;
+		}
+	.nav-none {
+		display: none;
+		}
+	.nav-icon {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 auto;
+		width: 260px;
+		}
+	.icon {
+		display: none;
+		}
+	.wave {
+		background-color: #fef9c4;
+		}
+	.waveimg {
+		display: none;
+		}
+	.menu {
+		display: inline;
+		}
+	.menu li {
+		display: none;
+		}
+	.menu img {
+		width: auto;
+		height: 24px;
+		margin-top: 10px;
+		}
+	.footerin  {
+		width: 100%;
+		margin: 0 auto;
+		height: 65px;
+		text-align: center;
+		}
+	.cr li  {
+		display: none;
+		}
+	.cr p {
+		font-size: 12px;
+		text-align: center;
+		}
+}
+</style>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onLoad="MM_preloadImages('img/btn2_on.png','img/btn3_on.png','img/btn4_on.png','img/btn5_on.png','img/btn1_on.png')">
+<header>
+  <h1><a href="index.html"><img src="img/logo.png" width="254" height="47" alt="success"/></a></h1>
+  <div class="nav-button">
+    <div class="nav-button-relative"> <span></span>
+      <span></span>
+      <span></span></div>
+  </div>
+	<nav>
+    <div class="nav-none">
+      <ul>
+        <li><a href="index.html"><img src="img/btn1.png" alt="TOP" width="128" height="54" id="btn1" onMouseOver="MM_swapImage('btn1','','img/btn1_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+        <li><a href="services.html"><img src="img/btn2.png" alt="事業内容" width="128" height="54" id="btn2" onMouseOver="MM_swapImage('btn2','','img/btn2_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+        <li class="nav_list"><a href="#"><img src="img/btn3_Group.png" alt="会社概要" width="128" height="54" id="btn3" onMouseOver="MM_swapImage('btn3','','img/btn3_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a>
+          <ul class="dropdown_lists">
+            <li class="dropdown_list">
+              <a href="about.html">会社概要</a></li>
+            <li class="dropdown_list">
+				<a href="philosophy.html">理念</a></li>
+            <li class="dropdown_list">
+              <a href="organization.html">組織</a></li>
+            <li class="dropdown_list">
+              <a href="https://newsuccess.hatenablog.com/" target="_blank">社長ブログ</a></li>
+          </ul>
+        </li>
+        <li><a href="https://www.rico-web.net/lunch-lp/success/" target="_blank"><img src="img/btn4.png" alt="採用" width="128" height="54" id="btn4" onMouseOver="MM_swapImage('btn4','','img/btn4_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+        <li><a href="contact.html"><img src="img/btn5.png" alt="お問い合わせ" width="130" height="54" id="btn5" onMouseOver="MM_swapImage('btn5','','img/btn5_on.png',1)" onMouseOut="MM_swapImgRestore()"/></a></li>
+      </ul>
+    </div>
+    <div class="nav600px">
+  <ul>
+    <div class="blogs">
+      <li>社長ブログ・発信</li>
+      <li>
+        <div class="nav-icon"><a href="https://newsuccess.hatenablog.com/" target="_blank"><img src="img/icon_blog.png" alt=""/></a><a href="https://note.com/success_note0311" target="_blank"><img src="img/icon_note.png" alt=""/></a><a href="https://lin.ee/X6Y6Py3" target="_blank"><img src="img/icon_line.png" alt=""/></a></div>
+      </li>
+    </div>
+    <li><a href="index.html">TOP</a></li>
+    <li><a href="services.html">事業内容</a></li>
+    <li><a href="about.html">会社概要</a></li>
+    <li><a href="philosophy.html">企業理念</a></li>
+    <li><a href="organization.html">組織</a></li>
+    <li><a href="https://www.rico-web.net/lunch-lp/success/">採用</a></li>
+    <li><a href="contact.html">お問い合わせ</a></li>
+    <li><a href="policies.html">各種許諾</a></li>
+	<li><a href="sitemap.html">サイトマップ</a></li>
+  </ul>
+    </div>
+  </nav>
+</header>
+<p class="mv"><img src="img/mainimage.jpg" alt="" width="1905" height="800"/>
+<p class="mv-catch"><img src="img/catch.png" alt="人と信頼が、技術を強くする。" width="652" height="58"/></p></p>
+<p class="mv600px"><img src="img/mainimage600px.png" alt=""/><p class="mv-catch600px"><img src="img/catch600px.png" alt="人と信頼が、技術を強くする。"/>
+</p>
+</p>
+<main>
+	<div class="container1">
+    <h2><img src="img/h2_services.png" alt="事業内容" width="119" height="44" class="title"/></h2>
+    <p><img src="img/top_panda.png" alt=""/></p> 
+    <p><a href="services.html"><img src="img/services_link.png" width="193" height="64" alt="詳しく見る"/></a></p>
+  </div>
+  <div class="container2">
+	  <h2>
+    <p class="title"><img src="img/title_blog.png" alt="社長ブログ・発信" width="223" height="42"/></p></h2>
+    <div class="text">
+      <p>私たちが何より大切にしているのは、共に働く仲間の絆です。<br>
+      家族も一緒に楽しむ社員旅行など、風通しの良い日常をありのままにつづっています。</p>
+    </div>
+    <div class="box">
+      <p><a href="https://newsuccess.hatenablog.com/" target="_blank"><img src="img/icon_blog.png" width="60" height="60" alt=""/></a></p>
+      <p><span>社長ブログ</span></p>
+      <p>会社の想いや日々の取り組みを発信しています。</p>
+    </div>
+    <div class="box">
+  <p><a href="https://note.com/success_note0311" target="_blank"><img src="img/icon_note.png" width="60" height="60" alt=""/></a></p>
+      <p><span>note</span></p>
+      <p>社内の雰囲気やプロジェクト事例を紹介しています。</p>
+    </div>
+    <div class="box">
+  <p><a href="https://lin.ee/X6Y6Py3" target="_blank"><img src="img/icon_line.png" width="60" height="60" alt=""/></a></p>
+      <p><span>LINE公式</span></p>
+      <p>お問い合わせ・最新情報はこちら</p>
+    </div>
+  </div>
+</main>
+  <div class="icon">
+    <p><a href="https://newsuccess.hatenablog.com/" target="_blank"><img src="img/icon_blog.png" width="84" height="84" alt=""/></a></p>
+    <p><a href="https://note.com/success_note0311" target="_blank"><img src="img/icon_note.png" width="84" height="84" alt=""/></a></p>
+    <p><a href="https://lin.ee/X6Y6Py3" target="_blank"><img src="img/icon_line.png" width="84" height="84" alt=""/></a></p>
+　</div>
+<footer>
+  <div class="footerin">
+  <img src="img/wave.png" alt="" width="1920" height="71" class="waveimg"/>
+  <div class="wave">
+    <div class="menu"> <a href="index.html"><img src="img/logo.png" width="254" height="47" alt="success"/></a>
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="services.html">事業内容</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="philosophy.html">理念</a></li>
+        <li><a href="organization.html">組織</a></li>
+        <li><a href="https://newsuccess.hatenablog.com/">BLOG</a></li>
+        <li><a href="https://www.rico-web.net/lunch-lp/success/">採用</a></li>
+        </ul>
+      </div>
+    <div class="cr">
+      <p>&copy;2026 Relume. All rights reserved.</p>
+      <ul>
+        <li><a href="img/privacy_policy.pdf">個人情報保護方針</a></li>
+        <li><a href="policies.html">利用許諾・免責事項</a></li>
+        <li><a href="sitemap.html">サイトマップ</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+</footer>
+<script type="text/javascript" src="js/jquery-3.7.1.min.js"></script>
+
+<script>
+$(function() {
+	$(".nav-button").on("click",function() {
+			  $("body").toggleClass("menu-open");
+	});
+	$(document).on('click', '.menu-open .nav600px', function() {
+			  $('.nav-button').trigger('click');
+	});
+	$(window).on("scroll", function() {
+		if ($(this).scrollTop() > 100) {
+				$(".icon").fadeIn();							// 
+		} else {													
+				$(".icon").fadeOut();						// 
+		}
+ 	});
+});
+</script>
+</body>
+</html>
