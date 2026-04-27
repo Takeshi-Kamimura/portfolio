@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- ← タイトル差し替え済み -->
     <title>Work | 寒河江一意LP（ケーススタディ）</title>
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/style-success.css" />
@@ -199,30 +198,31 @@
             </p>
             <div class="compare">
               <div>
-                <p class="compare-label">Before</p>
+                <p class="compare-label">Before｜絵コンテ</p>
                 <div class="thumbnail-container">
-                  <!-- ← 絵コンテのスクショに差し替え -->
                   <a
                     href="../assets/img/sagae-tiktok-before.png"
-                    title="Before：生徒3人案（絵コンテ）"
+                    title="Before：改定絵コンテ"
                   >
                     <img
-                      src="../assets/img/sagae-tiktok-before-thumb.png"
+                      src="../assets/img/sagae-tiktok-before.png"
                       alt="Before 絵コンテ"
                     />
                   </a>
                 </div>
               </div>
               <div>
-                <p class="compare-label">After</p>
-                <div class="thumbnail-container">
+                <p class="compare-label">After｜完成動画</p>
+                <div class="thumbnail-container video-thumb">
                   <!-- ← 完成動画サムネイルに差し替え -->
                   <a
-                    href="../assets/img/sagae-tiktok-after.png"
+                    href="./lp-sagae/movie/SNS_movie_sagae.mp4"
                     title="After：講師出演版（完成動画）"
+                    target="_blank"
+                    rel="noopener"
                   >
                     <img
-                      src="../assets/img/sagae-tiktok-after-thumb.png"
+                      src="../assets/img/sagae-tiktok-after.png"
                       alt="After 完成動画サムネイル"
                     />
                   </a>
@@ -241,7 +241,7 @@
             </p>
             <div class="compare">
               <div>
-                <p class="compare-label">Before</p>
+                <p class="compare-label">Before｜絵コンテ</p>
                 <div class="thumbnail-container">
                   <!-- ← 絵コンテ or 初稿サムネイルに差し替え -->
                   <a
@@ -249,22 +249,23 @@
                     title="Before：初稿絵コンテ"
                   >
                     <img
-                      src="../assets/img/sagae-cm-before-thumb.png"
+                      src="../assets/img/sagae-cm-before.png"
                       alt="Before 絵コンテ"
                     />
                   </a>
                 </div>
               </div>
               <div>
-                <p class="compare-label">After</p>
-                <div class="thumbnail-container">
-                  <!-- ← 完成動画サムネイルに差し替え -->
+                <p class="compare-label">After｜完成動画</p>
+                <div class="thumbnail-container video-thumb">
                   <a
-                    href="../assets/img/sagae-cm-after.png"
+                    href="./lp-sagae/movie/cm15_movie_sagae.mp4"
                     title="After：完成動画"
+                    target="_blank"
+                    rel="noopener"
                   >
                     <img
-                      src="../assets/img/sagae-cm-after-thumb.png"
+                      src="../assets/img/sagae-cm-after.png"
                       alt="After 完成動画サムネイル"
                     />
                   </a>
@@ -284,30 +285,32 @@
             </p>
             <div class="compare">
               <div>
-                <p class="compare-label">撮影</p>
+                <p class="compare-label">撮影風景</p>
                 <div class="thumbnail-container">
                   <!-- ← 撮影風景写真に差し替え -->
                   <a
-                    href="../assets/img/sagae-portrait-shooting.jpg"
+                    href="../assets/img/sagae-portrait-shooting.png"
                     title="撮影風景"
                   >
                     <img
-                      src="../assets/img/sagae-portrait-shooting-thumb.jpg"
+                      src="../assets/img/sagae-portrait-shooting.png"
                       alt="撮影風景"
                     />
                   </a>
                 </div>
               </div>
               <div>
-                <p class="compare-label">完成</p>
-                <div class="thumbnail-container">
+                <p class="compare-label">完成版｜デモで見る</p>
+                <div class="thumbnail-container video-thumb">
                   <!-- ← 完成スクショに差し替え -->
                   <a
-                    href="../assets/img/sagae-portrait-after.jpg"
+                    href="./lp-sagae/index.html#movie-section"
                     title="完成：動く肖像画（静止スクショ）"
+                    target="_blank"
+                    rel="noopener"
                   >
                     <img
-                      src="../assets/img/sagae-portrait-after-thumb.jpg"
+                      src="../assets/img/sagae-portrait-after.png"
                       alt="完成スクショ"
                     />
                   </a>
@@ -341,7 +344,7 @@
           <!-- ← 公表時の写真スクショ差し替え -->
           <div class="thumbnail-container" style="margin-top: 1.5rem">
             <img
-              src="../assets/img/sagae-result.jpg"
+              src="../assets/img/sagae-result.png"
               alt="結果発表のスクショ"
             />
           </div>
@@ -440,7 +443,7 @@
         });
 
         // Magnific Popup
-        $(".thumbnail-container").magnificPopup({
+        $(".thumbnail-container:not(.video-thumb)").magnificPopup({
           delegate: "a",
           type: "image",
           gallery: { enabled: true },

@@ -21,7 +21,7 @@
       </div>
       <div class="nav-badge">
         <span class="badge-dot"></span>
-        <a href="#">無料ガイド配布中</a>
+        <button class="btn-outline" onclick="openModal()">無料ガイド配布中</button>
       </div>
     </header>
 
@@ -36,7 +36,7 @@
           ><br />ゼロからの懸垂ロードマップ。
         </p>
         <div class="fv-cta">
-          <a href="#" class="btn">無料ガイドを受け取る</a>
+          <button class="btn btn-large" onclick="openModal()">無料ガイドを受け取る</button>
           <span class="cta-note">登録不要・PDF即ダウンロード</span>
         </div>
       </div>
@@ -380,7 +380,7 @@
           ※
           各ステップは、このガイドのPDFに詳細プログラムとして収録されています。
         </p>
-        <a href="#" class="btn-outline">PDFで確認する</a>
+         <button class="btn-outline" onclick="openModal()">PDFで確認する</button>
       </div>
     </section>
 
@@ -448,7 +448,7 @@
             <li>フォーム習得チェックリスト付き</li>
             <li>90日間スケジュール（印刷対応レイアウト）</li>
           </ul>
-          <a href="#" class="btn btn-large">無料ガイドを受け取る</a>
+          <button class="btn btn-large" onclick="openModal()">無料ガイドを受け取る</button>
           <div class="cta-meta">
             <span>● 無料</span>
             <span>● PDF形式</span>
@@ -466,9 +466,32 @@
       </div>
       <p class="footer-copy">© 2026 PULL-UP LAB. All rights reserved.</p>
       <p class="footer-credit">Designed by Takeshi Kamimura</p>
+
+      <!-- Coming Soon Modal -->
+<div class="modal-overlay" id="comingSoonModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <span class="modal-tag">// WORK IN PROGRESS</span>
+    <h2 class="modal-title">鋭意<span>制作中</span></h2>
+    <p class="modal-body">
+      懸垂ロードマップPDFは現在制作中です。<br>
+      もうしばらくお待ちください。
+    </p>
+    <div class="modal-bar">
+      <div class="modal-bar-fill"></div>
+    </div>
+    <button class="modal-close" onclick="closeModal()">閉じる</button>
+  </div>
+</div>
     </footer>
   
   <script>
+//モーダル用
+function openModal() { document.getElementById('comingSoonModal').classList.add('open'); }
+function closeModal() { document.getElementById('comingSoonModal').classList.remove('open'); }
+
+// Escキーで閉じる
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
   document.addEventListener("DOMContentLoaded", () => {
     const revealItems = document.querySelectorAll(".reveal-step");
 
